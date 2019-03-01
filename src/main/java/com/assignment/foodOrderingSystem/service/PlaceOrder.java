@@ -6,6 +6,8 @@ import com.assignment.foodOrderingSystem.model.Request;
 import java.io.IOException;
 
 public interface PlaceOrder {
-    public void addOrder(Request request);
-    public int checkout(Customer customer);
+    void addOrder(Request request, Customer customer);
+    void removeOrder(String foodItem, Customer customer);
+    void updateQuantity(Request request, Customer customer);
+    int checkout(Customer customer);
 }

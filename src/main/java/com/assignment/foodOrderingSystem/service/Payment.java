@@ -1,7 +1,15 @@
 package com.assignment.foodOrderingSystem.service;
 
-import com.assignment.foodOrderingSystem.model.Customer;
+import java.util.HashMap;
 
-public interface Payment {
-public int calculateTotal(Customer customer);
+class Payment {
+    int calculateTotal(Cart cart) {
+        int totalCost = 0;
+        for (HashMap.Entry<String, Integer> entry : cart.getCart().entrySet()
+             ) {
+            System.out.println("payment: "+entry.getValue());
+            totalCost += entry.getValue();
+        }
+        return totalCost;
+    }
 }
